@@ -1,36 +1,22 @@
-from typing import NamedTuple
-from typing import Union
-from typing import Literal
-from dataclasses import dataclass
-
-@dataclass
-class Coordinates1:
-    longitude: float
-    latitude: float
-
-def get_gps_coordinates3() -> Coordinates1:
-    return Coordinates1(10, 20)
-
-print(get_gps_coordinates3().latitude)
-print(get_gps_coordinates3().longitude)
+import logging.config
+from settings import logger_config
 
 
-class Coordinates(NamedTuple):
-    latitude: float
-    longitude: float
+# from typing import Union
+# from typing import Literal
+# from dataclasses import dataclass
 
-def get_gps_coordinates() -> Coordinates:
-    """Returns current coordinates using MacBook GPS"""
-    return Coordinates(10,20)
+logging.config.dictConfig(logger_config)
+logger = logging.getLogger('app_logger')
 
-a= Union[int, str, float]
 
-# def get_gps_coordinates1() ->dict[Literal["longitude" , "latitude"], float]:
-#     return {"longitude": 10, "latitude": 20}
-coordinates = get_gps_coordinates()
-print(coordinates.latitude)
-print(coordinates.longitude)
+def main():
+    logger.debug(r'это консоль')
+    logger.info(r'это консоль и файл')
+    logger.warning(r'это консоль файл телега')
+    logger.error(r'это консоль файл телега мыло')
+    print(10 + 15)
 
-# print(
-#     get_gps_coordinates()["longitudeRRR"]  # Тут IDE покажет ошибку!
-# )
+
+if __name__ == '__main__':
+    main()
