@@ -20,3 +20,9 @@ Traceback (most recent call last):
   File "c:/Users/int/Desktop/weather/coordinates.py", line 16, in func
     s=sum(ro)
 TypeError: 'int' object is not iterable
+2022-06-24 11:57:23,800 - INFO - app_logger - warning!can only concatenate str (not "int") to str
+2022-06-24 11:57:23,819 - INFO - app_logger - 'int' object is not iterable
+Traceback (most recent call last):
+  File "C:/Users/Programmer/PycharmProjects/weather10/coordinates.py", line 16, in func
+    s=sum(ro)
+TypeError: 'int' object is not iterable
