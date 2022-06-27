@@ -6,6 +6,9 @@ from weather_api_service import get_weather
 from weather_formatter import format_weather
 from pathlib import Path
 from history import save_weather, JSONFileWeatherStorage
+from colorama import init
+from termcolor import colored
+import os
 
 logging.config.dictConfig(logger_config)
 logger = logging.getLogger('app_logger')
@@ -34,10 +37,13 @@ def main():
 
 
 if __name__ == "__main__":
+    os.system('color')
     main()
-    aa='\33[0;92m'
-    print(f'{aa} ghbdtn')
-    # logger.debug(f'{aa} HELLO')
+    aa='\033[0m'
+    init()
+ 
+    print(colored(f'{6+3}', 'blue'))
+    # logger.debug(colored("hello", 'red'))
     # with open('history.json') as f:
     #     d=f.read()
     # print(d)
