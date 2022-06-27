@@ -37,7 +37,7 @@ if __name__ == "__main__":
     main()
     aa='\33[0;92m'
     print(f'{aa} ghbdtn')
-    logger.debug(f'{aa} HELLO')
+    # logger.debug(f'{aa} HELLO')
     # with open('history.json') as f:
     #     d=f.read()
     # print(d)
