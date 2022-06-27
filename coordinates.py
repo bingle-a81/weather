@@ -2,6 +2,7 @@ import logging.config
 from settings import logger_config
 from dataclasses import dataclass
 from exceptions import CantGetCoordinates
+from geopy.geocoders import Nominatim
 
 logging.config.dictConfig(logger_config)
 logger = logging.getLogger('app_logger')
@@ -16,7 +17,11 @@ class Coordinates:
 def get_gps_coordinates() -> Coordinates:
     """Returns current coordinates using MacBook GPS"""
     try:
-        return Coordinates(57.63516, 39.8)
+        loc ='Иваново ,Россия'
+        geolocator = Nominatim(user_agent="my_request")
+        location = geolocator.geocode(loc)
+        print(Coordinates(location.latitude,location.longitude))
+        return Coordinates(location.latitude, location.longitude)
     except TypeError as e:
         raise CantGetCoordinates
 

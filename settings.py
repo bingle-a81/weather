@@ -6,6 +6,8 @@ import telebot
 from configparser import ConfigParser
 import os
 
+
+
 base_path = os.path.dirname(os.path.abspath(__file__))
 config_path = os.path.join(base_path, "set.ini")
 # проверка наличия файла настоек
@@ -14,6 +16,7 @@ if os.path.exists(config_path):
     cfg.read(config_path, encoding='utf-8')
 else:
     print("Конфигурация не найдена!")
+
 
 SERVER = cfg.get("smtp", "server")
 PORT = cfg.get("smtp", "port")
@@ -91,7 +94,7 @@ logger_config = {
             'style': '{'
         },
         'upr_format': {
-            'format': '----{levelname} - {message}',
+            'format': '---{levelname} - {message}',
             'style': '{'
         },
     },
@@ -129,7 +132,7 @@ logger_config = {
     'loggers': {
         'app_logger': {
             'level': 'DEBUG',
-            'handlers': ['console', 'file', 'telegram_handler','email'],
+            'handlers': ['console', 'file', 'telegram_handler', 'email'],
             # 'propagate': False
         },
         'telega_logger': {
