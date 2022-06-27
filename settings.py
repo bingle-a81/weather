@@ -133,6 +133,7 @@ logger_config = {
         'app_logger': {
             'level': 'DEBUG',
             'handlers': ['console', 'file', 'telegram_handler', 'email'],
+            'color':'\33[0;92m',
             # 'propagate': False
         },
         'telega_logger': {

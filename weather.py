@@ -25,6 +25,8 @@ def main():
         exit(1)
     print(format_weather(weather))
 
+
+
     save_weather(
         weather,
         JSONFileWeatherStorage(Path.cwd() / "history.json")
@@ -33,6 +35,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+    aa='\33[0;92m'
+    print(f'{aa} ghbdtn')
+    logger.debug(f'{aa} HELLO')
     # with open('history.json') as f:
     #     d=f.read()
     # print(d)

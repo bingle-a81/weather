@@ -17,7 +17,7 @@ class Coordinates:
 def get_gps_coordinates() -> Coordinates:
     """Returns current coordinates using MacBook GPS"""
     try:
-        loc ='Иваново ,Россия'
+        loc ='Yaroslavl ,Россия'
         geolocator = Nominatim(user_agent="my_request")
         location = geolocator.geocode(loc)
         print(Coordinates(location.latitude,location.longitude))
